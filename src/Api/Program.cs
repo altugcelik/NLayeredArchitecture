@@ -2,6 +2,7 @@ using Business.Interfaces;
 using Business.Services;
 using DataAccess.Interfaces;
 using DataAccess.Repositories;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,17 @@ builder.Services.AddScoped<IWeatherRepository, WeatherRepository>();
 builder.Services.AddOpenApi();
 
 builder.Services.AddControllers();
+
+// Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Api",
+        Version = "v1"
+    });
+});
 
 var app = builder.Build();
 
@@ -44,6 +56,14 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+// Enable Swagger (development ve prod için) 
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Api v1");
+    c.RoutePrefix = string.Empty; // kök dizinde UI için (isteğe bağlı)
+});
 
 app.Run();
 

@@ -46,3 +46,6 @@
 /Users/altugcelik/Documents/Projects/NLayeredArchitecture/src/Api/obj/Debug/net9.0/Api.pdb
 /Users/altugcelik/Documents/Projects/NLayeredArchitecture/src/Api/obj/Debug/net9.0/Api.genruntimeconfig.cache
 /Users/altugcelik/Documents/Projects/NLayeredArchitecture/src/Api/obj/Debug/net9.0/ref/Api.dll
+/Users/altugcelik/Documents/Projects/NLayeredArchitecture/src/Api/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/altugcelik/Documents/Projects/NLayeredArchitecture/src/Api/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/altugcelik/Documents/Projects/NLayeredArchitecture/src/Api/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
